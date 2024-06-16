@@ -1,15 +1,43 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+public class SmartTv {
+    boolean ligada;
+    int canal;
+    int volume;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    public SmartTv() {
+        this.ligada = false;
+        this.canal = 1;
+        this.volume = 10;
+    }
+    public void ligar() {
+        this.ligada = true;
+    }
+
+    public void desligar() {
+        this.ligada = false;
+    }
+    public void aumentarVolume() {
+        if (this.ligada && this.volume < 100) {
+            this.volume++;
+        }
+    }
+    public void diminuirVolume() {
+        if (this.ligada && this.volume > 0) {
+            this.volume--;
+        }
+    }
+    public void aumentarCanal() {
+        if (this.ligada) {
+            this.canal++;
+        }
+    }
+    public void diminuirCanal() {
+        if (this.ligada && this.canal > 1) {
+            this.canal--;
+        }
+    }
+    public void mudarCanal(int novoCanal) {
+        if (this.ligada) {
+            this.canal = novoCanal;
         }
     }
 }
